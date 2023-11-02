@@ -1,45 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import Header from "../header"
 import RandomPlanet from "../random-planet"
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import  People  from "../people"
 
 const App = () => {
 
-  // const [peopleList, setPeopleList] = useState([])
-
-  // useEffect(() => {
-
-  //   fetch("https://swapi.dev/api/people").then((result) => {
-  //     return result.json()
-  //   }).then(body => {
-  //     //console.log("body", body)
-  //     setPeopleList(body.results)
-  //   })
-
-  // }, [])
-
-  // const renderPeopleList = () => {
-  //   const content = peopleList.map((people, index) => {
-  //     const { name } = people
-  //     return (
-  //       <li key={index}>
-  //         {name}
-  //       </li>
-  //     )
-  //   })
-
-  //   return content
-  // }
+  
 
 
   return (
+    <Router>
     <div className="App">
-      {/* <ul>
-        {renderPeopleList()}
-      </ul> */}
+      
       <Header />
       <RandomPlanet />
-
-      <div className="row mb-2">
+      <Switch> 
+        {/* <Route path="/planets" exact component={<Planets/>} /> */}
+        <Route path="/people" exact component={<People/>} />
+        <Route render={() => <h2>Page not found</h2>}/>
+      </Switch>
+      <People />
+      {/* <div className="row mb-2">
         <div className="col-md-6">
           PeopleList
            
@@ -48,9 +30,10 @@ const App = () => {
         <div className="col-md-6">
           PersonDetails
         </div>
-      </div>
+      </div> */}
 
     </div>
+    </Router>
   );
 }
 

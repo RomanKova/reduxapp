@@ -10,7 +10,7 @@ export default class Header extends Component {
                 <div className="navbar-collapse" id="navbarColor02">
                   <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                      <Link className="nav-link" to="/people/">People</Link>
+                      <Link className="nav-link" to="/people">People</Link>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" to="/planets/">Planets</Link>
