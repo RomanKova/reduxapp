@@ -1,0 +1,15 @@
+.random-planet{
+    background: #4c4c4c;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    min-height: 264px;
+}
+
+.random-planet img{
+    width: 100%;
+}
+
+.random-planet ul li{
+    font-size: 20px;
+}
