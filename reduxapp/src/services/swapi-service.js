@@ -14,4 +14,10 @@ export default class SwapiService{
         return planet
     }
 
+    getPeopleList = async () => {
+        const peopleList = await this.getRersources(`/people`)
+
+        return peopleList
+    }
+
 }

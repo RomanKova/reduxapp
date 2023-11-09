@@ -13,3 +13,9 @@
 .random-planet ul li{
     font-size: 20px;
 }
+.random-planet div{
+    width: 100%;
+}
+.random-planet img{
+    width: 200px;
+}
