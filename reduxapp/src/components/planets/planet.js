@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import SwapiService from '../../services/swapi-service';
 import { Link } from "react-router-dom"
 
-const  People  = () =>{
+const  Planet  = () =>{
 
-  const [peopleList, setPeopleList] = useState([])
+  const [planetList, setPlanetList] = useState([])
 
   const swapiService = new SwapiService();
 
@@ -12,9 +12,9 @@ const  People  = () =>{
   useEffect(() => {
 
     
-    swapiService.getPeopleList().then(res => {
+    swapiService.getPlanetList().then(res => {
       console.log("result oo", res)
-      setPeopleList(res.results)
+      setPlanetList(res.results)
   })
 
     // fetch("https://swapi.dev/api/people").then((result) => {
@@ -30,15 +30,15 @@ const  People  = () =>{
     const idReg = /\/([0-9]*)\/$/;
     return item.match(idReg)[1];
 }
-  const renderPeopleList = () => {
-    const content = peopleList.map((people, index) => {
+  const renderPlanetList = () => {
+    const content = planetList.map((planet, index) => {
       //как мы получаем имя и url из peopleList?
-      const { name, url, skin_color } = people
+      const { name, url } = planet
       //console.log("name jjkjk" + skin_color);
       const id = extractId(url)
       return (
         <li key={index}>
-          <Link to={`/people/${id}`}>{name}</Link>
+          <Link to={`/planet/${id}`}>{name}</Link>
         </li>
       )
     })
@@ -50,11 +50,11 @@ const  People  = () =>{
         <div className="container">
             <div className="row people-list">
               <ul>
-        {renderPeopleList()}
+        {renderPlanetList()}
       </ul>
             </div>
         </div>
     )
 }
 
-export default People
+export default Planet

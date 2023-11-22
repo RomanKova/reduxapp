@@ -4,6 +4,7 @@ import RandomPlanet from "../random-planet"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import  People  from "../people"
 import  PeopleItem  from "../people-item"
+import Planets from "../planets"
 
 const App = () => {
 
@@ -15,9 +16,9 @@ const App = () => {
     <div className="App">
       
       <Header />
-      <RandomPlanet />
+      {/* <RandomPlanet /> */}
       <Switch> 
-        {/* <Route path="/planets" exact component={<Planets/>} /> */}
+        <Route path="/planets" exact component={Planets} />
         <Route path="/people" exact component={People} />
         <Route path="/people/:peopleId" exact component={PeopleItem} />
         
