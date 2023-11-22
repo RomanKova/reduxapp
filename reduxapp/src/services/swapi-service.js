@@ -14,10 +14,22 @@ export default class SwapiService{
         return planet
     }
 
+    getPlanetList = async (id) => {
+        const planets = await this.getRersources(`/planets`)
+
+        return planets
+    }
+
     getPeopleList = async () => {
         const peopleList = await this.getRersources(`/people`)
 
         return peopleList
+    }
+
+    getPeopleInfo = async (id) => {
+        const peopleInfo = await this.getRersources(`/people/${id}`)
+
+        return peopleInfo
     }
 
 }
